@@ -20,20 +20,6 @@
         font-family: 'Roboto';
     }
 
-    .botao {
-        background-color: purple;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-
     .card {
         background-color: rgb(189, 189, 189);
     }
@@ -41,11 +27,6 @@
     .card:hover {
         transform: 4;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    }
-
-    .botao:hover {
-        background-color: #491755;
-
     }
 
     .btn-primary {
@@ -56,11 +37,11 @@
     @keyframes elevate {
         0% {
             transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
-            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         50% {
-            transform: translate3d(0, -5px, 0) rotate3d(0, 0, 1, 3deg);
+            transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 2deg);
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
         }
 
@@ -70,9 +51,9 @@
         }
     }
 
-    .btn-primary:hover {
+    .card:hover {
         border: none;
-        animation: elevate 2s ease-in  infinite;
+        animation: elevate 2s ease-out  infinite;
     }
     </style>
 </head>

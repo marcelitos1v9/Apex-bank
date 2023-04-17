@@ -43,8 +43,8 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <div class="card elevate border-0 rounded-3 ">
+                <div class="col-lg-3 col-md-6 mb-3 elevate">
+                    <div class="card  border-0 rounded-3 ">
                         <img class="card-img-top rounded-3" src="./img/area_pix.png" alt="Imagem do Banco">
                         <div class="card-body text-center">
                             <h2 class="card-title fw-bold mb-3">Banco Criativo</h2>
