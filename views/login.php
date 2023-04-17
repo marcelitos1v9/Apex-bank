@@ -56,6 +56,8 @@
   display: block;
   width: 100%;
 }
+.alert-warning{
+}
 
 @media (min-width: 576px) {
   .card {
@@ -74,14 +76,25 @@
                 <img src="../img/leao_logo_1.png" alt="">
             </div>
           <h2 class="text-center mb-4">Bem-vindo(a) ao Apex Bank</h2>
-          <form>
+            <?php 
+            $erro = $_GET["erro"];
+            if(isset($erro)){
+              echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+              <strong>Usuário inválido</strong> Verifique se o email e senha estão corretos
+              <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>";
+            }
+            ?>
+            <form action="../controllers/ver_login.php" method="post">
             <div class="form-group">
-              <label for="username">Usuário</label>
-              <input type="text" class="form-control" id="username" placeholder="Digite seu usuário">
+              <label for="username">Email</label>
+              <input type="email" class="form-control" name="email" id="username" placeholder="Digite seu email">
             </div>
             <div class="form-group">
               <label for="password">Senha</label>
-              <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+              <input type="password" class="form-control" name="senha" id="password" placeholder="Digite sua senha">
             </div>
             <button type="submit" class="btn mt-3 btn-primary btn-block rounded-pill">Entrar</button>
           </form>
