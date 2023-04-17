@@ -56,8 +56,6 @@
   display: block;
   width: 100%;
 }
-.alert-warning{
-}
 
 @media (min-width: 576px) {
   .card {

@@ -23,6 +23,7 @@
 
     .card {
         background-color: rgb(189, 189, 189);
+        height: 27rem;
     }
 
  
