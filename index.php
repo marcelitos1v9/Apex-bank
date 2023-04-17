@@ -5,14 +5,9 @@
     <!-- Seção do cabeçalho -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Apex Bank</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    
+                <ul class="navbar-nav m-auto">
+
                     <li class="nav-item">
                         <a class="nav-link" href="#produtos">Atendimento</a>
                     </li>
@@ -21,6 +16,17 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Usuario</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -127,7 +133,7 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <form action="" method="post" id="form-contato">
-                        <div class="form-group">
+                        <div class="form-floating">
                             <label for="nome">Nome:</label>
                             <input type="text" id="nome" name="nome" class="form-control" required>
                         </div>
@@ -143,8 +149,8 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
                             <label for="mensagem">Mensagem:</label>
                             <textarea id="mensagem" name="mensagem" class="form-control" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn botao btn-block">Enviar</button>
+                        <div class="form-group d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary col-4">Enviar</button>
                         </div>
                     </form>
                 </div>
@@ -152,11 +158,28 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
         </div>
     </section>
     <!-- Seção do rodapé -->
-    <footer class="bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="text-center">&copy; 2023 Apex Bank. Todos os direitos reservados.</p>
+    <footer class="footer  bg-dark text-light p-3 mt-3">
+        <div class="container ">
+            <div class="text-center">
+                <ul class="list-inline social-icons">
+                    <li class="list-inline-item">
+                        <a href="https://github.com/marcelitos1v9" target="_blank">
+                            <i class="fa-brands fa-github fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/marceloaugusto_oo/" target="_blank">
+                            <i class="fa-brands fa-instagram fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="mailto:marceloaugustocge@gmail.com" target="_blank">
+                            <i class="fa-solid fa-envelope fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <p>&copy; Marcelo Augusto 2023 Todos os direitos reservados</p>
                 </div>
             </div>
         </div>
