@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../models/conexao.php");
 
 // verifica se o usuário está autenticado
 if (!isset($_SESSION['user_id'])) {
@@ -7,7 +8,11 @@ if (!isset($_SESSION['user_id'])) {
   exit;
 }
 
-// usa o ID do usuário na página
 $user_id = $_SESSION['user_id'];
-echo "Bem-vindo, usuário $user_id!";
+$sql = "SELECT * FROM clients WHERE id = $user_id";
+$result = mysqli_query($conn, $sql);
+while($exibe = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+
+echo "Bem-vindo, usuário ".$exibe['nome']."!";
+}
 ?>
