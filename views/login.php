@@ -70,6 +70,7 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-6">
         <div class="card shadow-lg p-4">
+            
           <h2 class="text-center mb-4">Bem-vindo(a) ao Apex Bank</h2>
           <form>
             <div class="form-group">
