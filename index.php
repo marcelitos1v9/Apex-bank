@@ -4,7 +4,7 @@
 <body>
     <!-- Seção do cabeçalho -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav m-auto">
 
@@ -21,11 +21,10 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">Usuario</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="./views/login.php">Login</a>
+                            <a class="dropdown-item" href="#">Cadastrar</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="dropdown-item" href="#">Sair</a>
                         </div>
                     </li>
                 </ul>
