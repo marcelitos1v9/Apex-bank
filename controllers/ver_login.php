@@ -14,11 +14,11 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
   // se houver um registro correspondente, o usuário está autenticado
   session_start();
-  $_SESSION['user_id'] = mysqli_fetch_assoc($result)[0];
+  $_SESSION['user_id'] = mysqli_fetch_assoc($result)['id'];
   header('Location: ./main.php');
   exit;
-} else {
-  // se não houver registros correspondentes, as credenciais estão incorretas
+} 
+else {
   header("location:../views/login.php?erro");
 }
 ?>
