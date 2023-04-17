@@ -70,7 +70,9 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-6">
         <div class="card shadow-lg p-4">
-            
+            <div class="d-flex justify-content-center">
+                <img src="../img/leao_logo_1.png" alt="">
+            </div>
           <h2 class="text-center mb-4">Bem-vindo(a) ao Apex Bank</h2>
           <form>
             <div class="form-group">
@@ -81,8 +83,9 @@
               <label for="password">Senha</label>
               <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
             </div>
-            <button type="submit" class="btn btn-primary btn-block rounded-pill">Entrar</button>
+            <button type="submit" class="btn mt-3 btn-primary btn-block rounded-pill">Entrar</button>
           </form>
+            <a href="../" class="btn btn-dark rounded-pill mt-2">Voltar</a>
         </div>
       </div>
     </div>
