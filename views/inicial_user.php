@@ -29,7 +29,7 @@
                             <a class="nav-link" href="#contato">Contato</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sair</a>
+                            <a class="nav-link" href="../controllers/logout.php">Sair</a>
                         </li>
                     </ul>
                 </div>
