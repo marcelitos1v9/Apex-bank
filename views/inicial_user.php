@@ -39,58 +39,67 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
             </div>
         </header>
         <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="text-center mb-4">Dia a dia</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-4">Dia a dia</h2>
+                </div>
             </div>
-        </div >
-        <div class="row">
+            <div class="row">
                 <div class="col-lg-3 col-md-6 mb-3 elevate">
                     <div class="card  border-0 rounded-3 ">
                         <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
                         <div class="card-body text-center">
                             <h2 class="card-title fw-bold mb-3">Pix</h2>
-                            <p class="card-text mb-4">Somos um banco comprometido com nossos clientes e buscamos
+                            <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
                                 oferecer serviços financeiros de qualidade.</p>
-                            <div class="card-footer"> 
+                        </div>
+                        <div class="card-footer m-auto">
                             <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
-                            </div>   
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-3">
                     <div class="card elevate card border-0 rounded-3 ">
-                        <img class="card-img-top rounded-3" src="https://via.placeholder.com/350x150"
-                            alt="Imagem do Banco">
-                        <div class="card-body text-center">
-                            <h2 class="card-title fw-bold mb-3">Cartão de crédito</h2>
-                            <p class="card-text mb-4">Somos um banco comprometido com nossos clientes e buscamos
-                                oferecer serviços financeiros de qualidade.</p>
-                            <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+                        <div class="card  border-0 rounded-3 ">
+                            <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
+                            <div class="card-body text-center">
+                                <h2 class="card-title fw-bold mb-3">Pix</h2>
+                                <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
+                                    oferecer serviços financeiros de qualidade.</p>
+                            </div>
+                            <div class="card-footer m-auto">
+                                <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-3">
-                    <div class="card elevate border-0 rounded-3 ">
-                        <img class="card-img-top rounded-3" src="https://via.placeholder.com/350x150"
-                            alt="Imagem do Banco">
-                        <div class="card-body text-center">
-                            <h2 class="card-title fw-bold mb-3">Banco Criativo</h2>
-                            <p class="card-text mb-4">Somos um banco comprometido com nossos clientes e buscamos
-                                oferecer serviços financeiros de qualidade.</p>
-                            <a href="#" class="btn btn-primary rounded-pill px-4 py-2">Saiba mais</a>
+                    <div class="card elevate card border-0 rounded-3 ">
+                        <div class="card  border-0 rounded-3 ">
+                            <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
+                            <div class="card-body text-center">
+                                <h2 class="card-title fw-bold mb-3">Pix</h2>
+                                <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
+                                    oferecer serviços financeiros de qualidade.</p>
+                            </div>
+                            <div class="card-footer m-auto">
+                                <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-3">
-                    <div class="card elevate border-0 rounded-3 ">
-                        <img class="card-img-top rounded-3" src="https://via.placeholder.com/350x150"
-                            alt="Imagem do Banco">
-                        <div class="card-body text-center">
-                            <h2 class="card-title fw-bold mb-3">Banco Criativo</h2>
-                            <p class="card-text mb-4">Somos um banco comprometido com nossos clientes e buscamos
-                                oferecer serviços financeiros de qualidade.</p>
-                            <a href="#" class="btn btn-primary rounded-pill px-4 py-2">Saiba mais</a>
+                    <div class="card elevate card border-0 rounded-3 ">
+                        <div class="card  border-0 rounded-3 ">
+                            <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
+                            <div class="card-body text-center">
+                                <h2 class="card-title fw-bold mb-3">Pix</h2>
+                                <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
+                                    oferecer serviços financeiros de qualidade.</p>
+                            </div>
+                            <div class="card-footer m-auto">
+                                <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+                            </div>
                         </div>
                     </div>
                 </div>

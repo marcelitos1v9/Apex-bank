@@ -54,5 +54,10 @@
         border: none;
         animation: elevate 2s ease-out  infinite;
     }
+    .card-footer{
+        border: none;
+        box-shadow: none;
+        background-color: rgb(189, 189, 189);
+    }
     </style>
 </head>
