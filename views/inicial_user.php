@@ -58,7 +58,7 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
                                 oferecer serviços financeiros de qualidade.</p>
                         </div>
                         <div class="card-footer m-auto">
-                            <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+                            <a href="./pix.php" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
                         </div>
                     </div>
                 </div>
