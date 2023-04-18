@@ -9,7 +9,7 @@
                 <ul class="navbar-nav m-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#produtos">Atendimento</a>
+                        <a class="nav-link" href="#produtos">Vantagens</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
@@ -21,9 +21,7 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuario</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="./views/login.php">Login</a>
-                            <a class="dropdown-item" href="#">Cadastrar</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Sair</a>
+                            <a class="dropdown-item" href="./views/cadastro.php">Cadastrar</a>
                         </div>
                     </li>
                 </ul>
@@ -34,7 +32,7 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
             <div class="container text-center">
                 <h1 class="display-4">Apex Bank</h1>
                 <p class="lead">Sua melhor opção em serviços financeiros</p>
-                <a href="#" class="btn btn-outline-light btn-lg  rounded-pill">Saiba mais</a>
+                <a href="#" class="btn btn-outline-light btn-lg  rounded-pill">Cadastrar-se</a>
             </div>
         </div>
     </header>
@@ -43,7 +41,7 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="text-center mb-4">Atendimento Rápido</h2>
+                    <h2 class="text-center mb-4">Vantagens</h2>
                 </div>
             </div>
             <div class="row">
