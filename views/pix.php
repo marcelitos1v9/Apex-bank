@@ -33,6 +33,7 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
             <div class="container text-center">
                 <h1 class="display-4">Apex Bank</h1>
                 <p class="lead mt-3"><?php echo ucfirst($exibe[1]) ?> essa é a area pix, aqui você consegue transferir gratuitamente para outras contas</p>
+                <h3 class="mt-5">Seu saldo é de R$<?php echo $exibe[8] ?></h3>
             </div>
         </div>
     </header>

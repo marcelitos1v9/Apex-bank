@@ -13,103 +13,102 @@
     $result = mysqli_query($conn, $sql);
     while ($exibe = mysqli_fetch_array($result)) {
     ?>
-        <header>
+    <header>
 
-            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav m-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#produtos">Atendimento</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contato">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../controllers/logout.php">Sair</a>
-                        </li>
-                    </ul>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-nav m-auto">
+                <div class="row">
+                <a class="nav-link p-2" href="#produtos">Atendimento</a>
+                <a class="nav-link p-2" href="#sobre-nos">Sobre Nós</a>
+                <a class="nav-link p-2" href="#contato">Contato</a>
+                <a class="nav-link p-2" href="../controllers/logout.php">Sair</a>
                 </div>
-            </nav>
-            <div class="jumbotron jumbotron-fluid text-light p-6 mt-3" style="background: rgb(5,1,70);
+            </div>
+        </nav>
+        <div class="jumbotron jumbotron-fluid text-light p-6 mt-3" style="background: rgb(5,1,70);
 background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgba(5,1,70,1) 100%);">
-                <div class="container text-center">
-                    <h1 class="display-4">Apex Bank</h1>
-                    <p class="lead mt-3">Seja bem vindo <?php echo ucfirst($exibe[1])  ?></p>
+            <div class="container text-center">
+                <h1 class="display-4">Apex Bank</h1>
+                <h3 class="lead mt-3">Seja bem vindo <?php echo ucfirst($exibe[1])  ?></h3>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center mb-4">Dia a dia</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-3 elevate">
+                <div class="card  border-0 rounded-3 ">
+                    <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
+                    <div class="card-body text-center">
+                        <h2 class="card-title fw-bold mb-3">Saldo bancario</h2>
+                        <hr>
+                        <div class="mt-4">
+                        <h3 class="mt-5">Seu saldo é de R$<?php echo number_format($exibe["saldo"], 2, ',', '.'); ?></h3>
+                        </div>
+                    </div>
+                    <div class="card-footer m-auto">
+                        <a href="./pix.php" class="btn btn-primary rounded-pill px-4 py-2 ">Transferir</a>
+                    </div>
                 </div>
             </div>
-        </header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="text-center mb-4">Dia a dia</h2>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card elevate card border-0 rounded-3 ">
+                    <div class="card  border-0 rounded-3 ">
+                        <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
+                        <div class="card-body text-center">
+                            <h2 class="card-title fw-bold mb-3">Deposito</h2>
+                            <hr>
+                            <div class="mt-4">
+                                <h4 class="card-text ">Aqui você pode depositar e o seu dinheiro cai na hora</h4>
+                            </div>
+                        </div>
+                        <div class="card-footer m-auto">
+                            <a href="./deposito.php" class="btn btn-primary rounded-pill px-4 py-2 ">Depositar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-3 elevate">
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card elevate card border-0 rounded-3 ">
                     <div class="card  border-0 rounded-3 ">
                         <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
                         <div class="card-body text-center">
                             <h2 class="card-title fw-bold mb-3">Pix</h2>
-                            <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
-                                oferecer serviços financeiros de qualidade.</p>
+                            <hr>
+                            <div class="mt-4">
+                                <h4 class="card-text ">Aqui você pode depositar e o seu dinheiro cai na hora</h4>
+                            </div>
                         </div>
                         <div class="card-footer m-auto">
-                            <a href="./pix.php" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+                            <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <div class="card elevate card border-0 rounded-3 ">
-                        <div class="card  border-0 rounded-3 ">
-                            <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
-                            <div class="card-body text-center">
-                                <h2 class="card-title fw-bold mb-3">Pix</h2>
-                                <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
-                                    oferecer serviços financeiros de qualidade.</p>
-                            </div>
-                            <div class="card-footer m-auto">
-                                <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <div class="card elevate card border-0 rounded-3 ">
-                        <div class="card  border-0 rounded-3 ">
-                            <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
-                            <div class="card-body text-center">
-                                <h2 class="card-title fw-bold mb-3">Pix</h2>
-                                <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
-                                    oferecer serviços financeiros de qualidade.</p>
-                            </div>
-                            <div class="card-footer m-auto">
-                                <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card elevate card border-0 rounded-3 ">
+                    <div class="card  border-0 rounded-3 ">
+                        <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
+                        <div class="card-body text-center">
+                            <h2 class="card-title fw-bold mb-3">Pix</h2>
+                            <hr>
+                            <div class="mt-4">
+                                <h4 class="card-text ">Aqui você pode depositar e o seu dinheiro cai na hora</h4>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <div class="card elevate card border-0 rounded-3 ">
-                        <div class="card  border-0 rounded-3 ">
-                            <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
-                            <div class="card-body text-center">
-                                <h2 class="card-title fw-bold mb-3">Pix</h2>
-                                <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
-                                    oferecer serviços financeiros de qualidade.</p>
-                            </div>
-                            <div class="card-footer m-auto">
-                                <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
-                            </div>
+                        <div class="card-footer m-auto">
+                            <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
+    </div>
 </body>
 <?php } ?>
 <?php include("./blades/fim.php") ?>
