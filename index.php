@@ -5,34 +5,24 @@
     <!-- Seção do cabeçalho -->
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav m-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#produtos">Vantagens</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuario</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./views/login.php">Login</a>
-                            <a class="dropdown-item" href="./views/cadastro.php">Cadastrar</a>
-                        </div>
-                    </li>
-                </ul>
+            <div class="navbar-nav m-auto">
+                <div class="row">
+                    <a class="nav-link p-2" href="#produtos">Vantagens</a>
+                    <a class="nav-link p-2" href="#sobre-nos">Sobre Nós</a>
+                    <a class="nav-link p-2" href="#contato">Contato</a>
+                    <a class="nav-link p-2" href="./views/login.php">Login</a>
+                    <a class="nav-link p-2" href="./views/cadastro.php">Cadastrar</a>
+                </div>
             </div>
+
         </nav>
         <div class="jumbotron jumbotron-fluid text-light p-6 mt-3" style="background: rgb(5,1,70);
 background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgba(5,1,70,1) 100%);">
             <div class="container text-center">
                 <h1 class="display-4">Apex Bank</h1>
                 <p class="lead">Sua melhor opção em serviços financeiros</p>
-                <a href="#" class="btn btn-outline-light btn-lg  rounded-pill">Cadastrar-se</a>
+                <a href="./views/cadastro.php" class="btn btn-outline-light btn-lg  rounded-pill">Cadastrar-se</a>
             </div>
         </div>
     </header>
