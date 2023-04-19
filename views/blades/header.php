@@ -57,7 +57,8 @@
     .card-footer{
         border: none;
         box-shadow: none;
-        background-color: rgb(189, 189, 189);
+        background-color: rgb(189, 189, 189); 
+        overflow: hidden;
     }
     </style>
 </head>
