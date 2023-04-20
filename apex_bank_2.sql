@@ -25,7 +25,8 @@ DROP TABLE IF EXISTS `clients`;
 CREATE TABLE IF NOT EXISTS `clients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
-  `sexo` varchar(1) NOT NULL,
+  `sobrenome` varchar(50) DEFAULT NULL,
+  `sexo` varchar(1) DEFAULT NULL,
   `cpf` varchar(20) NOT NULL,
   `endereco` varchar(100) DEFAULT NULL,
   `telefone` varchar(20) DEFAULT NULL,
@@ -35,11 +36,11 @@ CREATE TABLE IF NOT EXISTS `clients` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Copiando dados para a tabela apex_bank.clients: ~2 rows (aproximadamente)
-INSERT INTO `clients` (`id`, `nome`, `sexo`, `cpf`, `endereco`, `telefone`, `email`, `senha`, `saldo`) VALUES
-	(1, 'marcelo', '', '843780298', 'rua 1', '90489-238', 'marcelo@gmail.com', '1234', 3709775.00),
-	(3, 'marcelo', '', '2133232', 'rua 2', '2324332323', 'marcelo3@gmail.com', '1234', 0.00),
-	(4, 'julia', '', '3432893', 'rua 3', '342425432', 'julia@gmail.com', '1234', 89.00);
+-- Copiando dados para a tabela apex_bank.clients: ~3 rows (aproximadamente)
+INSERT INTO `clients` (`id`, `nome`, `sobrenome`, `sexo`, `cpf`, `endereco`, `telefone`, `email`, `senha`, `saldo`) VALUES
+	(1, 'marcelo', 'augusto', '', '843780298', 'rua 1', '90489-238', 'marcelo@gmail.com', '1234', 4593088.00),
+	(3, 'marcelo', 'jesus', '', '2133232', 'rua 2', '2324332323', 'marcelo3@gmail.com', '1234', 0.00),
+	(4, 'julia', 'albuquerque', '', '3432893', 'rua 3', '342425432', 'julia@gmail.com', '1234', 79067510.00);
 
 -- Copiando estrutura para tabela apex_bank.transactions
 DROP TABLE IF EXISTS `transactions`;
