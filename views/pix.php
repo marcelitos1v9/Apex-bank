@@ -64,10 +64,10 @@ while ($exibe = mysqli_fetch_array($result)) {
                 <tbody>";
 
                     while ($exibe1 = mysqli_fetch_array($query)) {
-                        $telefone = substr($exibe1['telefone'], 0, 4);
+                        $telefone = substr($exibe1['telefone'],-4);
                         echo "<tr>
-                                <td>{$exibe1['nome']}</td>
-                                <td>{$telefone}****</td>
+                                <td>{$exibe1['nome']} {$exibe1['sobrenome']}</td>
+                                <td>****{$telefone}</td>
                             </tr>";
                     }
 

@@ -102,7 +102,12 @@
                         <div class="form-group required">
                             <label for="nome">Nome</label>
                             <input type="text" class="form-control" name="nome_cadastro" id="nome"
-                                placeholder="Digite seu Nome">
+                                placeholder="Digite seu Primeiro nome">
+                        </div>
+                        <div class="form-group required">
+                            <label for="nome">sobrenome</label>
+                            <input type="text" class="form-control" name="sobrenome_cadastro" id="nome"
+                                placeholder="Digite seu sobrenome">
                         </div>
                         <div class="form-group required">
                             <label for="cpf">Endereço</label>

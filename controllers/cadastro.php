@@ -3,6 +3,7 @@ include("../models/conexao.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $nome = $_POST['nome_cadastro'];
+  $sobrenome = $_POST['sobrenome_cadastro'];
   $cpf = $_POST['cpf_cadastro'];
   $endereco = $_POST['endereco_cadastro'];
   $telefone = $_POST['tel_cadastro'];
@@ -23,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
   }
 
-  $sql_insert = "INSERT INTO clients (nome, cpf, endereco, telefone, email, senha) VALUES ('$nome', '$cpf', '$endereco', '$telefone', '$email', '$senha')";
+  $sql_insert = "INSERT INTO clients (nome,sobrenome, cpf, endereco, telefone, email, senha) VALUES ('$nome','$sobrenome', '$cpf', '$endereco', '$telefone', '$email', '$senha')";
   mysqli_query($conn, $sql_insert);
 
   $user_id = mysqli_insert_id($conn); 
