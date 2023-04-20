@@ -44,11 +44,11 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
                                 <p class="card-text mb-3">Somos um banco comprometido com nossos clientes e buscamos
                                     oferecer serviços financeiros de qualidade.</p>
                             </div>
-                            <div class="mb-3">
+                            
                             <div class="card-footer m-auto">
                                 <a href="#" class="btn btn-primary rounded-pill px-4 py-2 mb-2">Saiba mais</a>
                             </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
