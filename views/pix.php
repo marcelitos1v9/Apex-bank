@@ -49,42 +49,43 @@ while ($exibe = mysqli_fetch_array($result)) {
             </div>
         </form>
         <?php
+@$varBusca = $_GET["Nome_pesquisa"];
 
-    $query = mysqli_query($conn, "SELECT * FROM transactions WHERE id_conta = $user_id");
-    if (mysqli_num_rows($query) == 0) {
+if (!empty($varBusca)) {
+    $query = mysqli_query($conn, "SELECT * FROM clients WHERE nome LIKE '%$varBusca%'");
+    if(mysqli_num_rows($query) == 0) {
         echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                <strong>Nenhum usuario encontrado:</strong> Verifique se o nome está correto!
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                  <span aria-hidden='true'>&times;</span>
-                </button>
-              </div>";
+        <strong>Nenhum usuario encontrado:</strong> Verifique se o nome está correto!
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>";
     } else {
         echo "<div class='table-responsive'>
                 <table class='table table-striped table-hover mt-3'>
-                  <thead>
-                    <tr>
-                      <th>Nome do usuario</th>
-                      <th>Ação</th>
-                      <th>Valor</th>
-                    </tr>
-                  </thead>
-                  <tbody>";
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
         while ($exibe1 = mysqli_fetch_array($query)) {
-            $telefone = substr($exibe1['telefone'], -4);
+            $telefone = substr($exibe1['telefone'],-4);
             echo "<tr>
                     <td>{$exibe1['nome']} {$exibe1['sobrenome']}</td>
-                    <td>****{$telefone}</td>
-                    <td><a href='./valor_transferencia.php?id={$exibe1['id']}' class='btn btn-sm btn-success'>Fazer transferência</a></td>
-                  </tr>";
+                    <td>**{$telefone}</td>
+                    <td><a href='user-details.php?id={$exibe1['id']}' class='btn btn-sm btn-success'>Fazer transferência</a></td>
+                </tr>";
         }
         echo "</tbody>
-              </table>
-              </div>";
+            </table>
+        </div>";
     }
 }
-
+}
 ?>
-
     </div>
 </body>
 <?php 

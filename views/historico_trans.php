@@ -29,33 +29,46 @@ while ($exibe = mysqli_fetch_array($result)) {
             background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgba(5,1,70,1) 100%);">
             <div class="container text-center">
                 <h1 class="display-4">Apex Bank</h1>
-                <p class="lead mt-3"><?php echo ucfirst($exibe["nome"]) ?> essa e seu historico de transações</p>
+                <p class="lead mt-3"><?php echo ucfirst($exibe["nome"]) ?> esse é o seu histórico de transações</p>
             </div>
         </div>
     </header>
-    <?php
-    echo "<div class='table-responsive'>
-    <table class='table table-striped table-hover mt-3'>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Telefone</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>";
-        while ($exibe1 = mysqli_fetch_array($query)) {
-        $telefone = substr($exibe1['telefone'], -4);
-        echo "<tr>
-                <td>{$exibe1['nome']} {$exibe1['sobrenome']}</td>
-                <td>****{$telefone}</td>
-                <td><a href='./valor_transferencia.php?id={$exibe1['id']}' class='btn btn-sm btn-success'>Fazer transferência</a></td>
-            </tr>";
-        }
-        echo "</tbody>
+
+    <div class="container mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $transactions_sql = "SELECT transactions.*, clients.nome AS nome_destinatario 
+                    FROM transactions 
+                    JOIN clients ON transactions.id_conta_recebe = clients.id 
+                    WHERE transactions.id_conta = $user_id";
+
+                    $transactions_result = mysqli_query($conn, $transactions_sql);
+                    
+
+                    $count = 1;
+                    while ($transaction = mysqli_fetch_array($transactions_result)) {
+                        echo '<tr>';
+                        echo '<td>' . $count . '</td>';
+                        echo '<td>' . $transaction['data_transacao'] . '</td>';
+                        echo '<td>' . $transaction['nome_destinatario'] . '</td>';
+                        echo '<td>' . 'R$'. number_format($transaction['valor'], 2, ',', '.') . '</td>';
+                        echo '</tr>';
+                        $count++;
+                    }
+                ?>
+            </tbody>
         </table>
-        </div>";
-                  ?>
+    </div>
+
 </body>
 <?php }
 include("./blades/fim.php");

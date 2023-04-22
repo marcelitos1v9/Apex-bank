@@ -94,14 +94,14 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
                     <div class="card  border-0 rounded-3 ">
                         <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
                         <div class="card-body text-center">
-                            <h2 class="card-title fw-bold mb-3">Pix</h2>
+                            <h2 class="card-title fw-bold mb-3">historico de transferencia</h2>
                             <hr>
                             <div class="mt-4">
                                 <h4 class="card-text ">Aqui você pode depositar e o seu dinheiro cai na hora</h4>
                             </div>
                         </div>
                         <div class="card-footer m-auto">
-                            <a href="#" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
+                            <a href="./historico_trans.php" class="btn btn-primary rounded-pill px-4 py-2 ">Saiba mais</a>
                         </div>
                     </div>
                 </div>
