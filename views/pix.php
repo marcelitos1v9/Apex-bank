@@ -76,7 +76,7 @@ if (!empty($varBusca)) {
             echo "<tr>
                     <td>{$exibe1['nome']} {$exibe1['sobrenome']}</td>
                     <td>**{$telefone}</td>
-                    <td><a href='user-details.php?id={$exibe1['id']}' class='btn btn-sm btn-success'>Fazer transferência</a></td>
+                    <td><a href='./valor_transferencia.php?id={$exibe1['id']}' class='btn btn-sm btn-success'>Fazer transferência</a></td>
                 </tr>";
         }
         echo "</tbody>
