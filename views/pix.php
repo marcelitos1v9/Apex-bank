@@ -49,11 +49,8 @@ while ($exibe = mysqli_fetch_array($result)) {
             </div>
         </form>
         <?php
-if (empty($_GET["Nome_pesquisa"])) {
-    echo "";
-} else {
-    $varBusca = $_GET["Nome_pesquisa"];
-    $query = mysqli_query($conn, "SELECT * FROM clients WHERE nome LIKE '%$varBusca%'");
+
+    $query = mysqli_query($conn, "SELECT * FROM transactions WHERE id_conta = $user_id");
     if (mysqli_num_rows($query) == 0) {
         echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
                 <strong>Nenhum usuario encontrado:</strong> Verifique se o nome está correto!
@@ -66,9 +63,9 @@ if (empty($_GET["Nome_pesquisa"])) {
                 <table class='table table-striped table-hover mt-3'>
                   <thead>
                     <tr>
-                      <th>Nome</th>
-                      <th>Telefone</th>
-                      <th>Ações</th>
+                      <th>Nome do usuario</th>
+                      <th>Ação</th>
+                      <th>Valor</th>
                     </tr>
                   </thead>
                   <tbody>";
@@ -85,7 +82,7 @@ if (empty($_GET["Nome_pesquisa"])) {
               </div>";
     }
 }
-}
+
 ?>
 
     </div>

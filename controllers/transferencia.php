@@ -20,11 +20,13 @@ if(isset($_POST['destinatario_id']) && isset($_POST['valor_transferencia'])) {
     if($valor_transferencia <= $exibe_verifica_saldo['saldo']) {
 
         $sql_transferencia = "UPDATE clients SET saldo = saldo - $valor_transferencia WHERE id = $user_id;
-                              UPDATE clients SET saldo = saldo + $valor_transferencia WHERE id = $destinatario_id;";
+                              UPDATE clients SET saldo = saldo + $valor_transferencia WHERE id = $destinatario_id;
+                              INSERT INTO transactions (id_conta,id_conta_recebe,valor,data_transacao) values ($user_id, $destinatario_id,'$valor_transferencia',NOW());
+                              ";
         $result_transferencia = mysqli_multi_query($conn, $sql_transferencia);
 
         if($result_transferencia) {
-            header('Location: ../views/pix.php?transferencia=sucesso');
+            header('Location: ../views/historico_trans.php?transferencia=sucesso');
             exit;
         } else {
             header('Location: ../views/pix.php?transferencia=erro');
