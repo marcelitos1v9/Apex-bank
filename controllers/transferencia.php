@@ -13,13 +13,12 @@ if(isset($_POST['destinatario_id']) && isset($_POST['valor_transferencia'])) {
     $destinatario_id = $_POST['destinatario_id'];
     $valor_transferencia = $_POST['valor_transferencia'];
 
-    // Verifica se o valor é menor ou igual ao saldo do usuário
     $sql_verifica_saldo = "SELECT saldo FROM clients WHERE id = $user_id";
     $result_verifica_saldo = mysqli_query($conn, $sql_verifica_saldo);
     $exibe_verifica_saldo = mysqli_fetch_array($result_verifica_saldo);
 
     if($valor_transferencia <= $exibe_verifica_saldo['saldo']) {
-        // Realiza a transferência
+
         $sql_transferencia = "UPDATE clients SET saldo = saldo - $valor_transferencia WHERE id = $user_id;
                               UPDATE clients SET saldo = saldo + $valor_transferencia WHERE id = $destinatario_id;";
         $result_transferencia = mysqli_multi_query($conn, $sql_transferencia);
