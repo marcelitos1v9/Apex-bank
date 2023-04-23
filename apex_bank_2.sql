@@ -34,28 +34,39 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `senha` varchar(250) NOT NULL,
   `saldo` double(20,2) DEFAULT 0.00,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela apex_bank.clients: ~3 rows (aproximadamente)
 INSERT INTO `clients` (`id`, `nome`, `sobrenome`, `sexo`, `cpf`, `endereco`, `telefone`, `email`, `senha`, `saldo`) VALUES
-	(1, 'marcelo', 'augusto', '', '843780298', 'rua 1', '90489-238', 'marcelo@gmail.com', '1234', 4593088.00),
-	(3, 'marcelo', 'jesus', '', '2133232', 'rua 2', '2324332323', 'marcelo3@gmail.com', '1234', 0.00),
-	(4, 'julia', 'albuquerque', '', '3432893', 'rua 3', '342425432', 'julia@gmail.com', '1234', 79067510.00);
+	(1, 'marcelo', 'augusto', '', '843780298', 'rua 1', '90489-238', 'marcelo@gmail.com', '1234', 151843.76),
+	(3, 'marcelo', 'jesus', '', '2133232', 'rua 2', '2324332323', 'marcelo3@gmail.com', '1234', 65242569.00),
+	(4, 'julia', 'albuquerque', '', '3432893', 'rua 3', '342425432', 'julia@gmail.com', '1234', 9589931.00),
+	(5, 'joão ', 'trombeta', NULL, '64678976', 'eua tyu', '8975679096787', 'joao@gmail.com', '1234', 8676343.24);
 
 -- Copiando estrutura para tabela apex_bank.transactions
 DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE IF NOT EXISTS `transactions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_conta` int(11) NOT NULL,
-  `tipo_transacao` enum('DEPOSITO','SAQUE','TRANSFERENCIA') NOT NULL,
+  `id_conta_recebe` int(11) NOT NULL,
   `valor` decimal(10,2) NOT NULL,
   `data_transacao` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_conta` (`id_conta`),
-  CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`id_conta`) REFERENCES `accounts` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `FK_transactions_clients` (`id_conta`),
+  CONSTRAINT `FK_transactions_clients` FOREIGN KEY (`id_conta`) REFERENCES `clients` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
--- Copiando dados para a tabela apex_bank.transactions: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela apex_bank.transactions: ~8 rows (aproximadamente)
+INSERT INTO `transactions` (`id`, `id_conta`, `id_conta_recebe`, `valor`, `data_transacao`) VALUES
+	(1, 4, 1, 789.00, '2023-04-22 13:34:14'),
+	(2, 4, 3, 6789.00, '2023-04-22 13:49:07'),
+	(3, 4, 1, 789.00, '2023-04-22 16:44:55'),
+	(4, 4, 5, 890.00, '2023-04-22 17:12:44'),
+	(5, 1, 4, 10000.00, '2023-04-22 17:39:06'),
+	(6, 1, 5, 7899768.00, '2023-04-22 22:03:19'),
+	(7, 1, 3, 65100000.00, '2023-04-22 22:04:05'),
+	(8, 1, 4, 789.00, '2023-04-23 10:07:58'),
+	(9, 4, 5, 7777.00, '2023-04-23 10:43:29');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
