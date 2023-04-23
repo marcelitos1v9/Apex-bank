@@ -47,9 +47,14 @@ while ($exibe = mysqli_fetch_array($result)) {
         </thead>
         <tbody>
             <?php
-                $transactions_sql = "SELECT transactions.*, clients.nome AS nome_destinatario,clients.sobrenome as sobrenome_destinatario 
+                $transactions_sql = "SELECT transactions.*, 
+                clients_destinatario.nome AS nome_destinatario,
+                clients_destinatario.sobrenome as sobrenome_destinatario,
+                clients_remetente.nome AS nome_remetente,
+                clients_remetente.sobrenome as sobrenome_remetente
                 FROM transactions 
-                JOIN clients ON transactions.id_conta_recebe = clients.id 
+                JOIN clients AS clients_destinatario ON transactions.id_conta_recebe = clients_destinatario.id 
+                JOIN clients AS clients_remetente ON transactions.id_conta = clients_remetente.id
                 WHERE transactions.id_conta = $user_id OR transactions.id_conta_recebe = $user_id";
 
                 $transactions_result = mysqli_query($conn, $transactions_sql);
@@ -66,7 +71,13 @@ while ($exibe = mysqli_fetch_array($result)) {
                         echo '<i class="fas fa-arrow-down text-success"></i> Recebimento';
                     }
                     echo '</td>';
-                    echo '<td>' . $transaction['nome_destinatario'].' '.$transaction['sobrenome_destinatario']. '</td>';
+                    echo '<td>';
+                    if ($transaction['id_conta_recebe'] == $user_id) {
+                        echo  $transaction['nome_remetente'] . ' ' . $transaction['sobrenome_remetente'];
+                    }else{
+                        echo $transaction['nome_destinatario'].' '.$transaction['sobrenome_destinatario'];
+                    }
+                    echo '</td>';
                     echo '<td>' . 'R$'. number_format($transaction['valor'], 2, ',', '.') . '</td>';
                     echo '<td>' . $transaction['data_transacao'] . '</td>';
                     echo '</tr>';
