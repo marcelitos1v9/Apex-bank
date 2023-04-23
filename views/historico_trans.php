@@ -35,39 +35,47 @@ while ($exibe = mysqli_fetch_array($result)) {
     </header>
 
     <div class="container mt-4">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    $transactions_sql = "SELECT transactions.*, clients.nome AS nome_destinatario 
-                    FROM transactions 
-                    JOIN clients ON transactions.id_conta_recebe = clients.id 
-                    WHERE transactions.id_conta = $user_id";
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Operação</th>
+                <th scope="col">Usuário envolvido</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Data e hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $transactions_sql = "SELECT transactions.*, clients.nome AS nome_destinatario,clients.sobrenome as sobrenome_destinatario 
+                FROM transactions 
+                JOIN clients ON transactions.id_conta_recebe = clients.id 
+                WHERE transactions.id_conta = $user_id OR transactions.id_conta_recebe = $user_id";
 
-                    $transactions_result = mysqli_query($conn, $transactions_sql);
-                    
+                $transactions_result = mysqli_query($conn, $transactions_sql);
+                
 
-                    $count = 1;
-                    while ($transaction = mysqli_fetch_array($transactions_result)) {
-                        echo '<tr>';
-                        echo '<td>' . $count . '</td>';
-                        echo '<td>' . $transaction['data_transacao'] . '</td>';
-                        echo '<td>' . $transaction['nome_destinatario'] . '</td>';
-                        echo '<td>' . 'R$'. number_format($transaction['valor'], 2, ',', '.') . '</td>';
-                        echo '</tr>';
-                        $count++;
+                $count = 1;
+                while ($transaction = mysqli_fetch_array($transactions_result)) {
+                    echo '<tr>';
+                    echo '<td>' . $count . '</td>';
+                    echo '<td>';
+                    if ($transaction['id_conta'] == $user_id) {
+                        echo '<i class="fas fa-arrow-up text-danger"></i> Transferência';
+                    } else if ($transaction['id_conta_recebe'] == $user_id) {
+                        echo '<i class="fas fa-arrow-down text-success"></i> Recebimento';
                     }
-                ?>
-            </tbody>
-        </table>
-    </div>
+                    echo '</td>';
+                    echo '<td>' . $transaction['nome_destinatario'].' '.$transaction['sobrenome_destinatario']. '</td>';
+                    echo '<td>' . 'R$'. number_format($transaction['valor'], 2, ',', '.') . '</td>';
+                    echo '<td>' . $transaction['data_transacao'] . '</td>';
+                    echo '</tr>';
+                    $count++;
+                }
+            ?>
+        </tbody>
+    </table>
+</div>
 
 </body>
 <?php }
