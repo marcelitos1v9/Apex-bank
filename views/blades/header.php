@@ -25,7 +25,10 @@
         background-color: rgb(189, 189, 189);
         height: 27rem;
     }
-
+    
+    .bg-primary{
+        background-color: #5F1AB5;
+    }
  
 
     .btn-primary {

@@ -20,6 +20,7 @@
                 <div class="row">
                 <a class="nav-link p-2" href="#produtos">Atendimento</a>
                 <a class="nav-link p-2" href="#sobre-nos">Sobre Nós</a>
+                <a class="nav-link p-2" href="#emprestimos">Empréstimos</a>
                 <a class="nav-link p-2" href="#contato">Contato</a>
                 <a class="nav-link p-2" href="../controllers/logout.php">Sair</a>
                 </div>
@@ -42,7 +43,9 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-3 elevate">
                 <div class="card  border-0 rounded-3 ">
-                    <img class="card-img-top rounded-3" src="../img/area_pix.png" alt="Imagem do Banco">
+                    <div class="card-top d-flex justify-content-center" style="background-color:#5F1AB5" src="" alt="Imagem do Banco">
+                        <i class="fa-solid fa-5x p-3  fa-piggy-bank" style="color: #aaaaaa;"></i>
+                    </div>
                     <div class="card-body text-center">
                         <h2 class="card-title fw-bold mb-3">Saldo bancario</h2>
                         <hr>
@@ -107,8 +110,40 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        <!-- <section id="emprestimos">
+            <h2 class="text-center mb-4 mt-4">Simulador de Empréstimos</h2>
+        <form action="../controllers/simulador.php" method="post">
+        <div class="form-group">
+            <label for="valor">Valor do empréstimo:</label>
+            <input type="number" name="valor" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="parcelas">Número de parcelas:</label>
+            <select name="parcelas" class="form-control" required>
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+            <option value="48">48</option>
+            </select>
+        </div> -->
+        <!-- <div class="form-group">
+            <label for="juros">Taxa de juros (% ao mês):</label>
+            <input type="number" name="juros" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Simular</button>
+        </form>
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-12">
+                
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                
+            </div>
+        </div> -->
+    </div>   
 </body>
 <?php } ?>
 <?php include("./blades/fim.php") ?>
