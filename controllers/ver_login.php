@@ -1,13 +1,11 @@
 <?php
 include("../models/conexao.php");
 
-// limita o número de tentativas de login
 $max_login_attempts = 5;
-$lockout_time = 300; // em segundos
+$lockout_time = 300; 
 session_start();
 if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] >= $max_login_attempts) {
   if ($_SESSION['last_login_attempt'] + $lockout_time > time()) {
-    // usuário foi bloqueado
     header("location:../views/login.php?bloqueado");
     exit;
   }
@@ -15,11 +13,9 @@ if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] >= $max_lo
   unset($_SESSION['login_attempts']);
 }
 
-// valida e filtra dados de entrada
 $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
 $password = trim($_POST['senha']);
 
-// consulta SQL preparada
 $stmt = $conn->prepare("SELECT id, senha FROM clients WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
