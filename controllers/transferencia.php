@@ -10,22 +10,35 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id']; 
 
 if(isset($_POST['destinatario_id']) && isset($_POST['valor_transferencia'])) {
-    $destinatario_id = $_POST['destinatario_id'];
-    $valor_transferencia = $_POST['valor_transferencia'];
+    $destinatario_id = (int) $_POST['destinatario_id'];
+    $valor_transferencia = (float) $_POST['valor_transferencia'];
 
-    $sql_verifica_saldo = "SELECT saldo FROM clients WHERE id = $user_id";
-    $result_verifica_saldo = mysqli_query($conn, $sql_verifica_saldo);
-    $exibe_verifica_saldo = mysqli_fetch_array($result_verifica_saldo);
+    // Utilizar prepared statements para evitar SQL injection
+    $sql_verifica_saldo = "SELECT saldo FROM clients WHERE id = ?";
+    $stmt_verifica_saldo = mysqli_prepare($conn, $sql_verifica_saldo);
+    mysqli_stmt_bind_param($stmt_verifica_saldo, 'i', $user_id);
+    mysqli_stmt_execute($stmt_verifica_saldo);
+    $exibe_verifica_saldo = mysqli_fetch_array(mysqli_stmt_get_result($stmt_verifica_saldo));
 
     if($valor_transferencia <= $exibe_verifica_saldo['saldo']) {
 
-        $sql_transferencia = "UPDATE clients SET saldo = saldo - $valor_transferencia WHERE id = $user_id;
-                              UPDATE clients SET saldo = saldo + $valor_transferencia WHERE id = $destinatario_id;
-                              INSERT INTO transactions (id_conta,id_conta_recebe,valor,data_transacao) values ($user_id, $destinatario_id,'$valor_transferencia',NOW());
-                              ";
-        $result_transferencia = mysqli_multi_query($conn, $sql_transferencia);
+        // Dividir as declarações SQL em várias consultas para evitar múltiplas declarações SQL
+        $sql_transferencia_1 = "UPDATE clients SET saldo = saldo - ? WHERE id = ?";
+        $stmt_transferencia_1 = mysqli_prepare($conn, $sql_transferencia_1);
+        mysqli_stmt_bind_param($stmt_transferencia_1, 'di', $valor_transferencia, $user_id);
+        mysqli_stmt_execute($stmt_transferencia_1);
 
-        if($result_transferencia) {
+        $sql_transferencia_2 = "UPDATE clients SET saldo = saldo + ? WHERE id = ?";
+        $stmt_transferencia_2 = mysqli_prepare($conn, $sql_transferencia_2);
+        mysqli_stmt_bind_param($stmt_transferencia_2, 'di', $valor_transferencia, $destinatario_id);
+        mysqli_stmt_execute($stmt_transferencia_2);
+
+        $sql_transferencia_3 = "INSERT INTO transactions (id_conta,id_conta_recebe,valor,data_transacao) values (?, ?, ?, NOW())";
+        $stmt_transferencia_3 = mysqli_prepare($conn, $sql_transferencia_3);
+        mysqli_stmt_bind_param($stmt_transferencia_3, 'idd', $user_id, $destinatario_id, $valor_transferencia);
+        mysqli_stmt_execute($stmt_transferencia_3);
+
+        if(mysqli_stmt_affected_rows($stmt_transferencia_3) > 0) {
             header('Location: ../views/historico_trans.php?transferencia=sucesso');
             exit;
         } else {
