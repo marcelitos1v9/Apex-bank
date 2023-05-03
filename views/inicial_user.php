@@ -110,7 +110,7 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
                 </div>
             </div>
         </div>
-        <!-- <section id="emprestimos">
+         <!-- <section id="emprestimos">
             <h2 class="text-center mb-4 mt-4">Simulador de Empréstimos</h2>
         <form action="../controllers/simulador.php" method="post">
         <div class="form-group">
@@ -125,8 +125,8 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
             <option value="36">36</option>
             <option value="48">48</option>
             </select>
-        </div> -->
-        <!-- <div class="form-group">
+        </div>
+        <div class="form-group">
             <label for="juros">Taxa de juros (% ao mês):</label>
             <input type="number" name="juros" class="form-control" required>
         </div>
@@ -142,7 +142,7 @@ background: linear-gradient(90deg, rgba(5,1,70,1) 0%, rgba(95,26,181,1) 50%, rgb
             <div class="col-lg-6 offset-lg-3">
                 
             </div>
-        </div> -->
+        </div>  -->
     </div>   
 </body>
 <?php } ?>

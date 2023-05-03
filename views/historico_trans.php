@@ -59,7 +59,6 @@ while ($exibe = mysqli_fetch_array($result)) {
 
                 $transactions_result = mysqli_query($conn, $transactions_sql);
                 
-
                 $count = 1;
                 while ($transaction = mysqli_fetch_array($transactions_result)) {
                     echo '<tr>';

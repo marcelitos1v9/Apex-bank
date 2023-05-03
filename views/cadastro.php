@@ -110,14 +110,14 @@
                                 placeholder="Digite seu sobrenome">
                         </div>
                         <div class="form-group required">
-                            <label for="cpf">Endereço</label>
+                            <label for="cpf">Cpf</label>
                             <input type="text" class="form-control" name="cpf_cadastro" id="cpf"
                                 placeholder="Digite seu cpf">
                         </div>
                         <div class="form-group required">
                             <label for="endereco">Endereço</label>
                             <input type="text" class="form-control" name="endereco_cadastro" id="enedereco"
-                                placeholder="Digite seu telefone">
+                                placeholder="Digite seu Endereço">
                         </div>
                         <div class="form-group required">
                             <label for="telefone">Telefone</label>
