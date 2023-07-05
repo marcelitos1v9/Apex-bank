@@ -3,7 +3,7 @@ session_start();
 include("../models/conexao.php");
 
 if (!isset($_SESSION['user_id'])) { 
-    header('Location: ./login.php'); 
+    header('Location: ../views/login.php'); 
     exit; 
 } 
 

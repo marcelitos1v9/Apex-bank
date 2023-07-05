@@ -78,7 +78,7 @@ while ($exibe = mysqli_fetch_array($result)) {
                     }
                     echo '</td>';
                     echo '<td>' . 'R$'. number_format($transaction['valor'], 2, ',', '.') . '</td>';
-                    echo '<td>' . $transaction['data_transacao'] . '</td>';
+                    echo '<td>' . date('d/m/Y H:i:s', strtotime($transaction['data_transacao'])) . '</td>';
                     echo '</tr>';
                     $count++;
                 }
