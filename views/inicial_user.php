@@ -18,7 +18,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="navbar-nav m-auto">
                 <div class="row">
-                <a class="nav-link p-2" href="#produtos">Atendimento</a>
+                <a class="nav-link p-2" href="atendimento.php">Atendimento</a>
                 <a class="nav-link p-2" href="#sobre-nos">Sobre Nós</a>
                 <a class="nav-link p-2" href="#emprestimos">Empréstimos</a>
                 <a class="nav-link p-2" href="#contato">Contato</a>
