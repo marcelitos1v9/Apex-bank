@@ -96,85 +96,91 @@ if (isset($_GET['id_atendimento'])) {
 
 <!-- CSS do chat -->
 <style>
-  .chat-box {
+.chat-box {
     background-color: #f5f5f5;
     border-radius: 5px;
     padding: 15px;
-    min-height: 400px;
-    overflow-y: auto;
-  }
+    height:70vh
 
-  .message {
+}
+
+
+.message {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
-  }
+}
 
-  .usuario .message {
+.usuario .message {
     background-color: #eaf5ff;
     color: #000;
     text-align: right;
-  }
+}
 
-  .suporte .message {
+.suporte .message {
     background-color: #fff;
     color: #000;
     text-align: left;
-  }
+}
 
-  .message-header {
+.message-header {
     font-weight: bold;
     margin-bottom: 5px;
-  }
+}
 
-  .message-content {
+.message-content {
     margin-bottom: 3px;
-  }
+}
 
-  .message-time {
+.message-time {
     font-size: 12px;
     color: #999;
-  }
+}
 
-  .chat-input {
+.chat-input {
     margin-top: 15px;
     position: sticky;
     bottom: 0;
     background-color: #fff;
     padding: 10px;
     border-top: 1px solid #ccc;
-  }
+}
+
+.titu{
+  position: sticky;
+}
 </style>
 
 <!-- HTML do chat -->
+<h1 class="text-center mb-3 titu">Apex bank-suporte</h1>
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <div class="chat-box">
-        <?php foreach ($chatMessages as $message) : ?>
-          <div class="message <?php echo $message['sender']; ?>">
-            <div class="message-header">
-              <?php
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="chat-box overflow-auto">
+                <?php foreach ($chatMessages as $message) : ?>
+                <div class="message <?php echo $message['sender']; ?>">
+                    <div class="message-header">
+                        <?php
               if ($message['sender'] === 'usuario') {
                 echo getUserName($user_id, $conn);
               } elseif ($message['sender'] === 'suporte') {
                 echo 'Suporte';
               }
               ?>
+                    </div>
+                    <div class="message-content"><?php echo $message['mensagem']; ?></div>
+                    <div class="message-time"><?php echo date('d/m/Y H:i', strtotime($message['datahora'])); ?></div>
+                </div>
+                <?php endforeach; ?>
             </div>
-            <div class="message-content"><?php echo $message['mensagem']; ?></div>
-            <div class="message-time"><?php echo date('d/m/Y H:i', strtotime($message['datahora'])); ?></div>
-          </div>
-        <?php endforeach; ?>
-      </div>
-      <div class="chat-input">
-        <form method="post">
-          <input type="text" name="message" placeholder="Digite sua mensagem..." class="form-control" />
-          <button type="submit" class="btn btn-primary mt-3">Enviar</button>
-        </form>
-      </div>
+            <div class="chat-input">
+                <form method="post">
+                    <input type="text" name="message" placeholder="Digite sua mensagem..." class="form-control" />
+                    <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <?php include("./blades/fim.php") ?>
